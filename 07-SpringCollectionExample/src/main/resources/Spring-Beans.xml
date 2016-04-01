@@ -1,0 +1,36 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+	<!-- Inner Bean definition -->
+
+	<bean id="javaCollection" class="com.sac.bean.JavaCollection">
+
+		<property name="addressList">
+			<list>
+				<value>India</value>
+				<value>USA</value>
+				<value>China</value>
+			</list>
+		</property>
+
+		<property name="addressSet">
+			<set>
+				<value>India</value>
+				<value>India</value>
+				<value>USA</value>
+			</set>
+		</property>
+
+		<property name="addressMap">
+			<map>
+				<entry key="1" value="India" />
+				<entry key="2" value="Pakistan" />
+				<entry key="3" value="USA" />
+			</map>
+		</property>
+	</bean>
+
+
+</beans>
