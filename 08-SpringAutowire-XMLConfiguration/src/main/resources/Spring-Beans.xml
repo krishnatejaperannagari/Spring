@@ -1,0 +1,20 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+
+
+	<bean id="address" class="com.sac.bean.Address">
+		<property name="addresLine1" value="2000 Bay Area BLVD" />
+		<property name="addressLine2" value="Apt 110" />
+		<property name="zipCode" value="77058"></property>
+	</bean>
+
+	<bean id="student" class="com.sac.bean.Student" autowire="byType">
+		<property name="firstName" value="Sachidananda"/>
+		<property name="lastName" value="Naik"></property>
+	</bean>
+
+
+</beans>
