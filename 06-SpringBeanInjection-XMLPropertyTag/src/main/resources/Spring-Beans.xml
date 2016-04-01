@@ -1,0 +1,21 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+	<!-- Inner Bean definition -->
+
+	<bean id="spellChecker" class="com.sac.entity.SpellChecker"></bean>
+
+	<bean id="textEditor" class="com.sac.entity.TextEditior">
+		<property name="spellChecker" ref="spellChecker">
+		<!-- 
+		Another way Injecting Bean
+		<bean id="spellChecker" class="com.sac.entity.SpellChecker"></bean> 
+		-->
+		</property>
+		<property name="a" value="10"></property>
+	</bean>
+
+
+</beans>
