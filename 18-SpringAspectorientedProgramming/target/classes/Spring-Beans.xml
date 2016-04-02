@@ -1,0 +1,41 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-4.2.xsd
+	http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context-4.2.xsd
+    http://www.springframework.org/schema/aop
+	http://www.springframework.org/schema/aop/spring-aop-4.2.xsd">
+
+	<context:annotation-config />
+
+	<aop:config>
+	<aop:aspect id="logging" ref="stLogging">
+	
+	<aop:pointcut id="selectAll" expression="execution(* com.sac.bean.*.*(..))" />
+	<aop:before pointcut-ref="selectAll"  method="beforeAdvice"/>
+	<aop:after  pointcut-ref="selectAll"  method="afterAdvice"/>
+	<aop:after-returning  pointcut-ref="selectAll"  method="afterReturningAdvice" 
+	returning="returnObj"/>
+	<aop:after-throwing  pointcut-ref="selectAll"  method="afterThrowingAdvice"
+	throwing="ex"/>
+	</aop:aspect>
+	</aop:config>
+	
+	
+	
+	
+	<bean id="stLogging" class="com.sac.aop.Logging" />
+
+	<bean id="student" class="com.sac.bean.Student">
+		<property name="name" value="Sachin"></property>
+		<property name="age" value="27"></property>
+	</bean>
+
+
+
+
+
+</beans>
