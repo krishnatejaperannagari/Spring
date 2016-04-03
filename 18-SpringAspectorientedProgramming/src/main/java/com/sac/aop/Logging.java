@@ -3,7 +3,7 @@ package com.sac.aop;
 public class Logging {
 	
 	public void beforeAdvice(){
-		System.out.println("Going to setupp Student profile");
+		System.out.println("Going to setup Student profile");
 	}
 
 	public void afterAdvice(){
