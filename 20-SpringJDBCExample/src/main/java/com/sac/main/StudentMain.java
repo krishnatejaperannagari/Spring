@@ -28,6 +28,9 @@ public class StudentMain {
 			System.out.println("Student Name: " + student.getName());
 			System.out.println("Student Age: " + student.getAge());
 		}
+		
+		System.out.println("----Updating The Record with ID = 2 -----" );
+		daoImpl.update(2, 25);
 
 	}
 
